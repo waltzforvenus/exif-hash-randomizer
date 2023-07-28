@@ -22,8 +22,8 @@ def remove_exif_and_randomize_hash(image_path):
     image_dimensions = img.size
     img.resize(image_dimensions[0] + int(image_dimensions[0]/100), image_dimensions[1] + int(image_dimensions[1]/100))
     
-    # change 5 pixels of the image to add some noise
-    [randomize_a_pixel(img) for i in range(5)]
+    # change 4 pixels of the image to add some noise
+    [randomize_a_pixel(img) for i in range(4)]
     
     # save the image and remove exif data
     img.save(image_path, exif=b'')
