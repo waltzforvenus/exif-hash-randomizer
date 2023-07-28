@@ -20,7 +20,7 @@ def remove_exif_and_randomize_hash(image_path):
     
     # extend a tiny bit of the image to randomize the hash
     image_dimensions = img.size
-    img.resize(image_dimensions[0] + int(image_dimensions[0]/100), image_dimensions[1] + int(image_dimensions[1]/100))
+    img = img.resize((image_dimensions[0] + int(image_dimensions[0]/100), image_dimensions[1] + int(image_dimensions[1]/100)))
     
     # change 4 pixels of the image to add some noise
     [randomize_a_pixel(img) for i in range(4)]
